@@ -1,0 +1,42 @@
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th class="col1">Name</th>
+        <th class="col2">Url</th>
+        <th class="col3">Telephone</th>
+        <th class="col4">Address details</th>
+      </tr>
+    </thead>
+    @if ((advertisers$ | async); as searchData) {
+      <tbody>
+        @for (item of searchData; track item) {
+          <tr>
+            <td class="col1">{{item.name}}</td>
+            <td class="col2">{{item.url}}</td>
+            <td class="col3">{{item.telephone}}</td>
+            <td class="col4">{{item.address}}<br />{{item.city}}<br />{{item.postcode}}</td>
+          </tr>
+        }
+      </tbody>
+    } @else {
+      <tbody>
+        <tr><td colspan="4"><div class="skeleton-gzuqyx6a2wa"></div></td></tr>
+      </tbody>
+    }
+  </table>
+
+  @if (notifyValue) {
+    <div class="notify">
+      <p>You have successfully added the record. This message is showing as a result of Signals. Typically I would then reload the table data above (if the record was really being added)</p>
+      <button type="button" class="standard-button" (click)="closeNotifcation()">Close notification</button>
+    </div>
+  }
+
+  <button type="button" class="standard-button" (click)="openModal()">Add advertiser</button>
+
+</div>
+
+@if (modalOpen()) {
+  <app-add-modal (statusEvent)="closeModal($event)"></app-add-modal>
+}

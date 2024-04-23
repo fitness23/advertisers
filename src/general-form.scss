@@ -1,0 +1,71 @@
+@use './variables' as c;
+
+.general-form{
+
+    ol{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        .error{
+            color: red;
+            padding-top: 0.3em;
+            font-weight: 600;
+
+            @media #{c.$large-and-extra-large-view}{
+                font-size: 1.125rem;
+            }
+
+            @media #{c.$small-and-medium-view}{
+                font-size: 1rem;
+            }
+        }
+
+        li{
+            &:not(:last-child) {
+                @media #{c.$large-and-extra-large-view}{
+                    margin-bottom: 1.2em;
+                }
+                @media #{c.$small-and-medium-view}{
+                    margin-bottom: 1.2em;
+                }
+              }
+
+              label{
+                &.required-symbol{
+                    &::after{
+                        content: "*";
+                        color: purple;
+                        font-weight: 650;
+                        padding-left: 0.4rem;
+                    }
+                }
+              }
+        }
+
+        li.submission{
+            margin-bottom: 0;
+        }
+
+
+
+        li.input-question{
+
+            label{
+                font-weight: 600;
+                display: block;
+                padding-bottom: 0.4em;
+                color: #666;
+            }
+
+            input{
+                padding: 0.625em 1.25em;
+                border-radius: 12px;
+                border: 1px solid #666;
+            }
+
+        }
+
+
+    }
+}

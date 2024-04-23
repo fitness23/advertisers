@@ -1,0 +1,10 @@
+$extra-large-view: "(min-width: 80.000em)"; // (1280px)
+$large-view: "(min-width: 60.000em) and (max-width: 79.938em)"; //(960px) (1279px)
+$large-and-extra-large-view: "(min-width: 60.000em)"; // (960px)
+
+$medium-view: "(min-width: 40.000em) and (max-width: 59.938em)"; //(640px) (959px)
+$small-view: "(max-width: 39.938em)"; // (639px)
+$small-and-medium-view: "(max-width: 59.938em)"; // (959px)
+
+$small-to-large-view: "(max-width: 79.938em)"; // (1279px)
+$medium-to-extra-large-view: "(min-width: 40.000em)"; // (640px)

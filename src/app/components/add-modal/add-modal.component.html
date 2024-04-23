@@ -1,0 +1,72 @@
+<div class="blackout" (click)="closeModal()"></div>
+<div class="modal-container">
+
+  <div class="modal">
+    <div class="content">
+      <div class="main-info">
+        <div class="title">Add advertiser</div>
+        <div class="close">
+          <button type="button" class="standard-button" (click)="closeModal()">Close</button>
+        </div>
+      </div>
+      <div class="detail">
+
+        <p>Please enter the advertiser details below:</p>
+
+        <form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm.value)" #form="ngForm">
+          <div class="general-form">
+            <ol>
+              <li class="input-question">
+                <label for="name" class="required-symbol">Name</label>
+                <input id="name" type="text" formControlName="name" />
+                @if ((myForm.controls['name'].dirty || form.submitted) && (!myForm.controls['name'].valid)) {
+                  <div class="error">Please provide a name</div>
+                }
+              </li>
+              <li class="input-question">
+                <label for="url" class="required-symbol">Url</label>
+                <input id="url" type="text" formControlName="url" />
+                @if ((myForm.controls['url'].dirty || form.submitted) && (!myForm.controls['url'].valid)) {
+                  <div class="error">Please provide a url</div>
+                }
+              </li>
+              <li class="input-question">
+                <label for="telephone" class="required-symbol">Telephone</label>
+                <input id="telephone" type="text" formControlName="telephone" />
+                @if ((myForm.controls['telephone'].dirty || form.submitted) && (!myForm.controls['telephone'].valid)) {
+                  <div class="error">Please provide a telephone</div>
+                }
+              </li>
+              <li class="input-question">
+                <label for="address" class="required-symbol">Address</label>
+                <input id="address" type="text" formControlName="address" />
+                @if ((myForm.controls['address'].dirty || form.submitted) && (!myForm.controls['address'].valid)) {
+                  <div class="error">Please provide an address</div>
+                }
+              </li>
+              <li class="input-question">
+                <label for="city" class="required-symbol">City</label>
+                <input id="city" type="text" formControlName="city" />
+                @if ((myForm.controls['city'].dirty || form.submitted) && (!myForm.controls['city'].valid)) {
+                  <div class="error">Please provide a city</div>
+                }
+              </li>
+              <li class="input-question">
+                <label for="postcode" class="required-symbol">Postcode</label>
+                <input id="postcode" type="text" formControlName="postcode" />
+                @if ((myForm.controls['postcode'].dirty || form.submitted) && (!myForm.controls['postcode'].valid)) {
+                  <div class="error">Please provide a postcode</div>
+                }
+              </li>
+              <li class="submission">
+                <button class="standard-button" type="submit">Save</button>
+              </li>
+            </ol>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
